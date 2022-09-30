@@ -1,0 +1,25 @@
+p {
+    font-family: Lato;
+  }
+h1{
+    text-align: center; 
+    color: rgb(118, 193, 223);
+}
+
+.register-form{
+text-align: center;
+background-image: url("https://images.pexels.com/photos/458917/pexels-photo-458917.jpeg?auto=compress&cs=tinysrgb&w=600") ;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+  #root {
+    padding: 50px;
+   
+  }
+
+  .register-form {
+    max-width: 850px;
+    margin: auto;
+
+  }
+

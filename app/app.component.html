@@ -1,0 +1,145 @@
+<h1>Tour package website </h1>
+
+<div class="register-form">
+  
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label> Name  </label>
+      <input
+        type="text"
+        formControlName="fullname"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"
+      />
+      <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+        <div *ngIf="f['fullname'].errors['required']">name is required</div>
+      </div>
+    </div>
+
+
+
+<br>
+<div class="form-group">
+  <label>Email   </label>
+  <input
+    type="text"
+    formControlName="email"
+    class="form-control"
+    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+  />
+  <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+    <div *ngIf="f['email'].errors['required']">Email is required</div>
+    <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+  </div>
+</div>
+<br>
+<div class="form-group">
+  <label>Password   </label>
+  <input
+    type="password"
+    formControlName="password"
+    class="form-control"
+    [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+  />
+  <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+    <div *ngIf="f['password'].errors['required']">Password is required</div>
+    <div *ngIf="f['password'].errors['minlength']">
+      Password must be at least 6 characters
+    </div>
+    <div *ngIf="f['password'].errors['maxlength']">
+      password must not exceed 40 characters
+    </div>
+  </div>
+</div>
+
+<br>
+
+
+
+    <div class="form-group">
+      <label>Source place   </label>
+      <input
+        type="text"
+        formControlName="source"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['source'].errors }"
+      />
+      <div *ngIf="submitted && f['source'].errors" class="invalid-feedback">
+        <div *ngIf="f['source'].errors['required']">Source place is required</div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label>Destination Place    </label>
+      <input
+        type="text"
+        formControlName="dp"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['dp'].errors }"
+      />
+      <div *ngIf="submitted && f['dp'].errors" class="invalid-feedback">
+        <div *ngIf="f['dp'].errors['required']">Destination place  is required</div>
+     
+      </div>
+    </div>
+<br>
+   
+    <div class="form-group">
+      <label>Package Id   </label>
+      <input
+        type="password"
+        formControlName="package"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['package'].errors }"
+      />
+      <div *ngIf="submitted && f['package'].errors" class="invalid-feedback">
+        <div *ngIf="f['package'].errors['required']">Package ID is required</div>
+        <div *ngIf="f['package'].errors['minlength']">
+          Package must be 7 characters
+        </div>
+        <div *ngIf="f['package'].errors['maxlength']">
+          Package must be 7 characters
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+      <label>No of days </label>
+      <input type="text" formControlName="nd" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['nd'].errors }"
+      />
+      <div *ngIf="submitted && f['nd'].errors" class="invalid-feedback">
+        <div *ngIf="f['nd'].errors['required']">number of days  is required</div>
+      </div>
+    </div>
+
+    <br>
+    <div class="form-group form-check">
+      <input
+        type="checkbox"
+        formControlName="acceptTerms"
+        class="form-check-input"
+        [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"
+      />
+      <label for="acceptTerms" class="form-check-label"
+        >I have read and agree to the Terms</label
+      >
+      <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+        Accept Terms is required
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button
+        type="button"
+        (click)="onReset()"
+        class="btn btn-warning float-right"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</div>
